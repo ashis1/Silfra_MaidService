@@ -45,7 +45,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+//app.use('/', routes);
 //app.use('/users', users);
 app.use('/products', productRouter);
 app.use('/api/posts', routes);
@@ -99,11 +99,18 @@ app.use('/api/days', dayRouter);
  app.use(passport.initialize());
  app.use(passport.session());
 
+app.get("/", function (request, response) {
+  response.sendFile(__dirname + '/public/index.html');
+});
 
- app.get('*', function (req, res, next) {
-     res.locals.user = req.user || null;
-     next();
- });
+var routes = require('./routes/index');
+app.use('/',routes);
+
+
+ //app.get('*', function (req, res, next) {
+ //    res.locals.user = req.user || null;
+ //    next();
+ //});
 
 
 
