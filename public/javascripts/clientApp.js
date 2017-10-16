@@ -1,4 +1,4 @@
-﻿var clientApp = angular.module('clientApp', ['ui.router']);
+var clientApp = angular.module('clientApp', ['ui.router']);
 
 
 clientApp.config(function ($stateProvider,  $urlRouterProvider,$locationProvider) {

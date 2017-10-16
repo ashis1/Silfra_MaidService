@@ -1,4 +1,4 @@
-﻿var app = angular.module('homeApp', ['ui.router']);
+var app = angular.module('homeApp', ['ui.router']);
 app.config(function ($stateProvider) {
     var form1State = {
         name: 'form1',
