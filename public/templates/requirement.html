@@ -1,0 +1,697 @@
+ 
+ <div ng-controller="requirementCtrl">
+     <div class="row" style="background-color:#fff;padding:30px;border-radius:10px;margin:0% 2%;">
+         
+         <div class="col-md-12">
+             <div class="row">
+                 <div class="col-md-12">
+                     <center><h3 class="section-heading">Few more details about your requirement </h3></center>
+                     <hr />
+                 </div>
+
+                 <br /><br /><br /><br />
+                 
+                 <div class="col-md-3">
+                     <label>Start Time preference ( If any )</label>
+                     <input ng-model="requirements.StartTime" class="form-control timepicker" data-default="10:48" type="time" />
+
+                 </div>
+                 <div class="col-md-3">
+                     <label>Number of Working Hours</label>
+                     <input ng-model="requirements.MaximumHours" class="form-control" type="number" />
+
+
+
+
+                 </div>
+                 <div class="col-md-3">
+                     <label>Number of people in the house</label>
+                     <select ng-model="requirements.TotalMember" class="form-control" style="text-align:center;border-radius:1px;">
+                         <option selected value="">No of People</option>
+                         <option>1</option>
+                         <option>2</option>
+                         <option>3</option>
+                         <option>4</option>
+                         <option>5</option>
+                         <option>6</option>
+                         <option>7</option>
+                         <option>8</option>
+                         <option>9</option>
+                         <option>9+</option>
+                     </select>
+                 </div>
+                 <div class="col-md-3">
+                     <label>Size of the house</label>
+                     <select ng-model="requirements.HouseSize" class="form-control" style="text-align:center;border-radius:1px;">
+                         <option selected value="">No of Rooms</option>
+                         <option>1 BHK</option>
+                         <option>2 BHK</option>
+                         <option>3 BHK</option>
+                         <option>4 BHK</option>
+                         <option>5+ BHK</option>
+
+                     </select>
+                 </div>
+                 <!--<div class="col-md-2">
+
+                    <div   style="border-radius:1px; border:8px solid white;background-color:white;  ">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="switch">
+                                    <input ng-model="inputCheck1" type="checkbox" class="inputCheck" onclick="getSelected()" name="chb[]" value="Cleaning">
+                                    <center style="padding:10px;height:45px" class="slider">
+
+                                        Cleaning
+                                    </center>
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-2">
+
+                    <div   style="border-radius:1px; border:8px solid white;background-color:white;  ">
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <label class="switch">
+                                    <input ng-model="inputCheck2" class="inputCheck" name="chb[]" onclick="getSelected()" type="checkbox" value="Cooking">
+                                    <center style="padding:10px;height:45px" class="slider">
+
+                                        Cooking
+                                    </center>
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-2">
+
+                    <div style="border-radius:1px; border:8px solid white;background-color:white;  ">
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+
+                                <label class="switch">
+                                    <input onclick="getSelected()" ng-model="inputCheck3" class="inputCheck" name="chb[]" type="checkbox" value="Baby Sitter">
+                                    <center style="padding:10px;height:45px" class="slider">
+
+                                        Baby Sitter
+                                    </center>
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+                <div class="col-md-2">
+
+                    <div style="border-radius:1px; border:8px solid white;background-color:white;  ">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="switch">
+                                    <input onclick="getSelected()" ng-model="inputCheck4" class="inputCheck" name="chb[]" type="checkbox" value="Elder / old age Care">
+                                    <center style="padding:10px;height:45px" class="slider">
+
+                                        Elder / old age Care
+                                    </center>
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>-->
+             </div>
+             <div ng-if="IsworkType1" style="margin-top:40px;background-color:ghostwhite;padding:30px;" class="row jumbotron">
+                 <div class="col-md-12">
+                     <p><u>Select your needs for cleaner</u></p>
+
+                 </div>
+
+
+
+                 <div class="col-md-6">
+                     <label for="bc" style="cursor:pointer" class="pull-left">Bathroom Cleaning</label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsCleaner_BathroomCleaning" id="bc" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+                 <div class="col-md-6">
+                     <label for="ci" style="cursor:pointer" class="pull-left">Clothes Ironing</label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsCleaner_Ironing" id="ci" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+                 <div class="col-md-6">
+                     <label for="cwwm" style="cursor:pointer" class="pull-left">Clothes Washing (With Washing Machine)</label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsCleaner_MachineClothWashing" id="cwwm" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+                 <div class="col-md-6">
+                     <label for="cwnm" style="cursor:pointer" class="pull-left">Clothes Washing (Without Washing Machine)</label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsCleaner_NonMachineClothWashing" id="cwnm" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+                 <div class="col-md-6">
+                     <label for="dust" style="cursor:pointer" class="pull-left">Dusting</label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsCleaner_Dusting" id="dust" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+                 <div class="col-md-6">
+                     <label for="fc" style="cursor:pointer" class="pull-left">Floor Cleaning</label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsCleaner_FloorCleaning" id="fc" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+                 <div class="col-md-6">
+                     <label for="gs" style="cursor:pointer" class="pull-left">Grocery Shopping</label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsCleaner_GroceryShopping" id="gs" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+                 <div class="col-md-6">
+                     <label for="uc" style="cursor:pointer" class="pull-left">Utensil Cleaning</label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsCleaner_UtensilCleaning" id="uc" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+                 <br /><br /><br />
+                 <p>Other Cleaning Services</p>
+                 <input ng-model="requirements.IsCleaner_OtherDescription" type="text" class="form-control" placeholder="Other Cleaning Services" />
+
+
+             </div>
+             <div ng-if="IsworkType2" style="margin-top:40px;background-color:ghostwhite;padding:30px;" class="row jumbotron">
+                 <div class="col-md-12">
+                     <p><u>Select your needs for cook</u></p>
+
+                 </div>
+                 <div class="col-md-6">
+
+                     <p>FOOD TYPE</p>
+                     <div class="row">
+                         <div class="col-md-12">
+
+                             <label for="veg" style="cursor:pointer" class="pull-left">VEGETARIAN (veg food)</label>
+                             <label class="switchs pull-right">
+                                 <input ng-model="requirements.IsCook_FoodType_IsVeg" id="veg" type="checkbox">
+                                 <span class="sliders"></span>
+                             </label>
+
+                         </div>
+                         <div class="col-md-12">
+                             <label for="nveg" style="cursor:pointer" class="pull-left">NON VEGETARIAN (non-veg food) </label>
+                             <label class="switchs pull-right">
+                                 <input ng-model="requirements.IsCook_FoodType_IsNonVeg" id="nveg" type="checkbox">
+                                 <span class="sliders"></span>
+                             </label>
+
+                         </div>
+
+                     </div>
+                 </div>
+                 <div class="col-md-6">
+
+                     <p>MEAL TYPE</p>
+                     <div class="row">
+                         <div class="col-md-12">
+
+                             <label for="bf" style="cursor:pointer" class="pull-left">BREAKFAST ( morning )</label>
+                             <label class="switchs pull-right">
+                                 <input ng-model="requirements.IsCook_MealType_Breakfast" id="bf" type="checkbox">
+                                 <span class="sliders"></span>
+                             </label>
+
+                         </div>
+                         <div class="col-md-12">
+                             <label for="lun" style="cursor:pointer" class="pull-left">LUNCH  ( afternoon )</label>
+                             <label class="switchs pull-right">
+                                 <input ng-model="requirements.IsCook_MealType_Lunch" id="lun" type="checkbox">
+                                 <span class="sliders"></span>
+                             </label>
+
+                         </div>
+                         <div class="col-md-12">
+                             <label for="din" style="cursor:pointer" class="pull-left">DINNER ( evening )</label>
+                             <label class="switchs pull-right">
+                                 <input ng-model="requirements.IsCook_MealType_Dinner" id="din" type="checkbox">
+                                 <span class="sliders"></span>
+                             </label>
+
+                         </div>
+                     </div>
+                 </div>
+
+
+                 <br /><br /><br />
+                 <p>Other Cooking Services</p>
+                 <input type="text" ng-model="requirements.IsCook_OtherDescription" class="form-control" placeholder="Other Cooking Services" />
+
+
+             </div>
+             <div ng-if="IsworkType3" style="margin-top:40px;background-color:ghostwhite;padding:30px;" class="row jumbotron">
+                 <div class="col-md-12">
+                     <p><u>Select your needs for baby sitter</u></p>
+
+                 </div>
+
+                 <div class="col-md-6">
+                     <span>Age of Baby</span>
+                     <select ng-model="requirements.IsBabySitter_Age" style="text-align:center;border-radius:1px;" class="form-control">
+                         <option> less than 1 month </option>
+                         <option>   1 month </option>
+                         <option>   2 month </option>
+                         <option>   3 month </option>
+                         <option>   4 month </option>
+                         <option>   5 month </option>
+                         <option>   6 month </option>
+                         <option>   7 month </option>
+                         <option>   8 month </option>
+                         <option>   9 month </option>
+                         <option>   10 month </option>
+                         <option>   11 month </option>
+                         <option>   12 month </option>
+                         <option>   13 month </option>
+                         <option>   14 month </option>
+                         <option>   15 month </option>
+                         <option>   16 month </option>
+                         <option>   17 month </option>
+                         <option>   18 month </option>
+                         <option>   19 month </option>
+                         <option>   20 month </option>
+                         <option>   21 month </option>
+                         <option>   22 month </option>
+                         <option>   23 month </option>
+                         <option>   24 month </option>
+                         <option>   25 month </option>
+                         <option>   26 month </option>
+                         <option>   27 month </option>
+                         <option>   28 month </option>
+                         <option>   29 month </option>
+                         <option>   30 month </option>
+                         <option>   31 month </option>
+                         <option>   32 month </option>
+                         <option>   33 month </option>
+                         <option>   34 month </option>
+                         <option>   35 month </option>
+                         <option>   36 month </option>
+                         <option>   37 month </option>
+                         <option>   38 month </option>
+                         <option>   39 month </option>
+                         <option>   40 month </option>
+                         <option>   41 month </option>
+                         <option>   42 month </option>
+                         <option>   44 month </option>
+                         <option>   45 month </option>
+                         <option>   46 month </option>
+                         <option>   47 month </option>
+                         <option>   48 month </option>
+                         <option>   49 month </option>
+                         <option>   5 year </option>
+                         <option>   5.5 year </option>
+                         <option>   6 year </option>
+                         <option>   6.5 year </option>
+                         <option>   7 year </option>
+                         <option>   7.5 year </option>
+                         <option>   8 year </option>
+                         <option>   8.5 year </option>
+                         <option>   9 year </option>
+                         <option>   9.5 year </option>
+                         <option>   10 year </option>
+                     </select>
+
+                 </div>
+                 <div class="col-md-6">
+
+                     <div class="row">
+                         <div class="col-md-4">  </div>
+                         <div class="col-md-4">
+
+                             <p>Gender of Baby</p>
+
+
+                         </div>
+                         <div class="col-md-2">
+
+                             <label class="switchradio">
+                                 <input ng-model="requirements.IsBabySitter_Gender" name="ra" type="radio" value="Boy">
+                                 <span class="sliderradio"></span>
+                             </label>
+                             <br />
+                             <label>BOY</label>
+
+
+                         </div>
+                         <div class="col-md-2">
+
+                             <label class="switchradio">
+                                 <input ng-model="requirements.IsBabySitter_Gender" name="ra" type="radio" value="Girl">
+                                 <span class="sliderradio"></span>
+                             </label>
+                             <br />
+                             <label>GIRL</label>
+
+                         </div>
+                     </div>
+
+                 </div>
+                 <br /><br /><br /><br />
+                 <div class="col-md-12">
+                     <p><u>Work that needed to do</u></p>
+                 </div>
+
+                 <div class="col-md-6">
+                     <label for="bdip" style="cursor:pointer" class="pull-left">Changing Diaper</label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsBabySitter_ChangingDiaper" id="bdip" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+                 <div class="col-md-6">
+                     <label for="bunten" style="cursor:pointer" class="pull-left">Cleaning Utensils of Baby</label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsBabySitter_CleaningUtensils" id="bunten" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+                 <div class="col-md-6">
+                     <label for="bfeed" style="cursor:pointer" class="pull-left">Feeding</label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsBabySitter_Feeding" id="bfeed" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+                 <div class="col-md-6">
+                     <label for="bmsg" style="cursor:pointer" class="pull-left">Massage</label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsBabySitter_Massage" id="bmsg" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+                 <div class="col-md-6">
+                     <label for="bsleep" style="cursor:pointer" class="pull-left">Preparing Baby for Sleep</label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsBabySitter_Sleeping" id="bsleep" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+                 <div class="col-md-6">
+                     <label for="bwalk" style="cursor:pointer" class="pull-left">Taking Baby for a Walk</label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsBabySitter_ForWalk" id="bwalk" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+
+
+                 <br /><br /><br />
+                 <p>Other Baby Sitting Services</p>
+                 <input ng-model="requirements.IsBabySitter_OtherDescription" type="text" class="form-control" placeholder="Other Baby Sitting Services" />
+
+
+             </div>
+             <div ng-if="IsworkType4" style="margin-top:40px;background-color:ghostwhite;padding:30px;" class="row jumbotron">
+                 <div class="col-md-12">
+                     <p><u>Select your needs for elderly care</u></p>
+
+                 </div>
+                 <div class="col-md-4">
+                     <span>Age of Elder</span>
+                     <input ng-model="requirements.IsElderCare_Age" type="number" class="form-control" placeholder="Age fo the elder person" />
+
+
+                 </div>
+                 <div class="col-md-4">
+                     <span>Is he/she bed ridden</span>
+                     <select ng-model="requirements.IsElderCare_BedRidden" style="text-align:center;border-radius:1px;" class="form-control">
+                         <option selected value="">   - bed ridden -  </option>
+                         <option>   YES </option>
+                         <option>   NO </option>
+
+
+                     </select>
+
+                 </div>
+                 <div class="col-md-4">
+
+                     <div class="row">
+
+                         <div class="col-md-6">
+
+                             <p>Gender of Baby</p>
+
+
+                         </div>
+                         <div class="col-md-3">
+                              
+                             <label class="switchradio">
+                                 <input ng-model="requirements.IsElderCare_Gender" name="ra1" type="radio" value="Male">
+                                 <span class="sliderradio"></span>
+                             </label>
+                             <br />
+                             <label>MALE</label>
+
+
+                         </div>
+                         <div class="col-md-3">
+
+                             <label class="switchradio">
+                                 <input ng-model="requirements.IsElderCare_Gender" name="ra1" type="radio" value="Female">
+                                 <span class="sliderradio"></span>
+                             </label>
+                             <br />
+                             <label>FEMALE</label>
+
+                         </div>
+                     </div>
+
+                 </div>
+
+                 <br /><br /><br /><br />
+                 <div class="col-md-12">
+                     <p><u>Work that needed to do</u></p>
+                 </div>
+
+
+
+
+                 <div class="col-md-6">
+                     <label for="ebath" style="cursor:pointer" class="pull-left">Bathing & Sponging</label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsElderCare_Bathing" id="ebath" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+                 <div class="col-md-6">
+                     <label for="eclean" style="cursor:pointer" class="pull-left">Cleaning Utensils of Elderly</label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsElderCare_CleaningUtensils" id="eclean" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+                 <div class="col-md-6">
+                     <label for="efeed" style="cursor:pointer" class="pull-left">Feeding</label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsElderCare_Feeding" id="efeed" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+                 <div class="col-md-6">
+                     <label for="emed" style="cursor:pointer" class="pull-left">Giving Medicines</label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsElderCare_GivingMedicines" id="emed" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+                 <div class="col-md-6">
+                     <label for="emsg" style="cursor:pointer" class="pull-left">Massage</label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsElderCare_Massage" id="emsg" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+                 <div class="col-md-6">
+                     <label for="ewalk" style="cursor:pointer" class="pull-left">Taking Elderly for a Walk </label>
+                     <label class="switchs pull-right">
+                         <input ng-model="requirements.IsElderCare_ForWalk" id="ewalk" type="checkbox">
+                         <span class="sliders"></span>
+                     </label>
+
+                 </div>
+
+
+                 <br /><br /><br />
+                 <p>Details of service required to the Elder/Patient</p>
+                 <input ng-model="requirements.IsElderCare_OtherDescription" type="text" class="form-control" placeholder="Other Elderly Care Services" />
+
+
+             </div>
+             <div class="row">
+                 <div class="col-md-6">
+                     <h3 style="margin-top:{{margin}};" class="section-heading">  Other preference ( if any ) </h3>
+
+                 </div>
+                 <div class="col-md-6">   </div>
+                 <div class="col-md-6">
+                     <div class="col-md-12">
+                         <br /> 
+                         <label>Age preference ( If any )</label>
+                         
+                         <select ng-model="requirements.Age" class="form-control" style="text-align:center;border-radius:1px;">
+                             <option selected value=""> - Age preference - </option>
+                             <option>18 - 25 years</option>
+                             <option>25 - 30 years</option>
+                             <option>30 - 35 years</option>
+                             <option>35 - 40 years</option>
+                             <option>40 - 45 years</option>
+                             <option>45 - 50 years</option>
+                             <option>50 - 55 years</option>
+                             <option>55 - 60 years</option>
+                             <option>60 - 70 years</option>
+                             <option>70 +  years</option>
+                            
+                         </select>
+                         <br />
+                     </div>
+                     <div class="col-md-12">
+                         
+                         <label>Start Date </label>
+                         {{IsSelectedGender}}
+                         <input ng-model="requirements.StartDate" type="date" style="border-radius:0px;"  class="form-control"  />
+                            
+
+                     </div>
+                     <div class="col-md-12">
+                         <br /> 
+                         <label>Religion preference ( If any )</label>
+                         <select ng-model="requirements.Religion" class="form-control" style="text-align:center;border-radius:1px;">
+                             <option selected value=""> - Religion preference - </option>
+                             <option>Hindu</option>
+                             <option>Muslim</option>
+                             <option>Christian</option>
+                             <option>Jain</option>
+                             <option>Sikh</option>
+                             <option>Buddhist</option>
+                         </select>
+
+                     </div>
+                 </div>
+
+
+
+                 <div class="col-md-6">
+
+                     <label>Comment ( If any )</label>
+                     <textarea ng-model="requirements.Comment" rows="8" class="form-control" style="border-radius:1px;margin-top:5px;">
+                                 
+                             </textarea>
+
+                 </div>
+
+                 <div class="col-md-6">
+
+
+
+
+                 </div>
+             </div>
+         </div>
+
+
+
+         <div class="col-md-8">
+
+         </div>
+         <div class="col-md-2">
+
+             <Center><a style="margin-top:15%" href="/#!/" class="btn btnCancel  btn-xl   inputCheck">Cancel</a></Center>
+         </div>
+         <div class="col-md-2">
+             
+             <Center><input type="submit" ng-click="Insert(requirements)" style="cursor:pointer;border-radius:2px;width:100%;margin-top:15%;background-color:white" value="save" class="btn btn-outline1 btn-xl js-scroll-trigger inputCheck" /></Center>
+             <!--<Center><a ng-click="Insert(requirments)" style="cursor:pointer;border-radius:2px;width:100%;margin-top:15%" href="" class="btn btn-outline1 btn-xl js-scroll-trigger inputCheck"> Save </a></Center>-->
+         </div>
+
+
+     </div>
+     <br /><br />
+     <style>
+         .btnCancel {
+             cursor: pointer;
+             border-radius: 2px;
+             border-color: #ccc;
+             color: #ccc !important;
+             width: 100%;
+         }
+
+             .btnCancel:hover {
+                 cursor: pointer;
+                 border-radius: 2px;
+                 border-color: #ccc;
+                 color: white !important;
+                 background-color: #ccc !important;
+             }
+
+             .btnCancel:focus {
+                 cursor: pointer;
+                 border-radius: 2px;
+                 border-color: #ccc;
+                 color: white !important;
+                 background-color: #ccc !important;
+             }
+
+         .btn:hover, .btn:focus {
+             color: white !important
+         }
+     </style>
+ </div>
+
+ 

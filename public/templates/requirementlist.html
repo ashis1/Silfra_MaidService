@@ -1,0 +1,135 @@
+﻿<div ng-controller="requirementListCtrl">
+    <div class="container background-base">
+        <p style="overflow-wrap:break-word">{{requirments[0]}}<br /><br />
+        
+        </p>
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Clinet Requirement List</h2>
+            </div>
+            <div class="col-md-1">
+
+            </div>
+            <div class="col-md-3 pull-right">
+                <h4 class="pull-right"> INFORMATION</h4><br /><br />
+                <span style="padding:3px;font-size:small;" class="labeltrue pull-right">&nbsp;TRUE </span>&nbsp;&nbsp;
+                <span style="padding:3px;font-size:small" class="labelfalse pull-right">&nbsp;FALSE </span>
+
+            </div>
+        </div>
+        <hr />
+        <h4>
+            <b style="overflow-wrap:break-word">
+                
+            </b>
+        </h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Client Requirement Records</div>
+                    <div class="panel-body">
+                        <table class="table table-hover table-bordered table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Work Type</th>
+                                    <th>Preferences</th>
+                                    <th>Requirments</th>
+                                    <th>Comment</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="x in requirments">
+                                    
+                                    <td><div ng-repeat="y in x.WorkTypePreference">
+                                        <span  ng-if="y == 'Cleaning'">
+                                           
+                                            <label style="width:100%"  ng-if="x.IsCleaner" class="labeltrue"> 
+                                               <center> CLEANING </center>
+                                            </label> 
+                                             
+                                        </span> 
+                                        <span ng-if="y == 'Cooking'">
+                                            <label style="width:100%"  ng-if="x.IsCook" class="labeltrue">
+                                                <center>COOKING</center>
+                                            </label>
+                                                  
+                                        </span>
+                                            <div ng-if="y == 'Baby Sitter'">
+                                                <label  style="width:100%" ng-if="x.IsBabySitter" class="labeltrue">
+                                                    <center>BABY SITTING</center>
+                                                </label>
+                                                    
+                                            </div>
+                                            <div ng-if="y == 'Elder / old age Care'">
+                                                <label style="width:100%" ng-if="x.IsElderCare" class="labeltrue">
+                                                   <center>ELDER CARE</center>
+                                                </label>
+                                                  
+                                            </div>
+                                        </div>
+                                    </td>
+                                    
+                                    <td >
+                                        <span ng-if="x.Religion" style="padding:1px" class="labeltrue">
+                                         &nbsp;{{x.Religion}}
+                                        </span> &nbsp;
+                                        <span  ng-if="x.Gender" style="padding:1px" class="labeltrue">
+                                            &nbsp;{{x.Gender}}
+                                        </span> &nbsp;
+                                        <span  ng-if="x.Age" style="padding:1px" class="labeltrue">
+                                            &nbsp;{{x.Age}}
+                                        </span> &nbsp;
+                                        <span  ng-if="x.UrgencyPreference" style="padding:1px" class="labeltrue">
+                                            &nbsp;{{x.UrgencyPreference}}
+                                        </span> &nbsp;
+                                        <span ng-if="x.SessionPreference" style="padding:1px" class="labeltrue">
+                                            &nbsp;{{x.SessionPreference}}
+                                        </span> &nbsp;
+                                    
+                                    </td>
+                                    <td>
+                                        <label ng-if="x.StartDate" style="padding:1px;font-weight:normal" class="labeltrue">
+                                            &nbsp;Start Date {{x.StartDate | date : "dd.MM.y"}}&nbsp;
+                                        </label> <br />
+                                        <label ng-if="x.StartTime" style="padding:1px;font-weight:normal" class="labeltrue">
+                                            &nbsp;working Time from: {{x.StartTime | date : "hh:mm a"}} &nbsp;
+                                        </label> <br />
+                                      
+                                        <label ng-if="x.MaximumHours" style="padding:1px;font-weight:normal" class="labeltrue">
+                                            &nbsp;Duration per time : {{x.MaximumHours}} Hours&nbsp;
+                                        </label> &nbsp;<br />
+                                        <label ng-if="x.TotalMember" style="padding:1px;font-weight:normal" class="labeltrue">
+                                            &nbsp;{{x.TotalMember}} Members Family
+                                        </label> &nbsp;<br />
+                                        <label ng-if="x.HouseSize" style="padding:1px;font-weight:normal" class="labeltrue">
+                                            &nbsp;{{x.HouseSize}} House
+                                        </label> &nbsp;<br />
+                                    </td>
+                                    <td>
+                                        {{x.Comment}}
+                                    </td>
+                                     <td>
+
+                                        <span ng-show="x.IsActive && !x.IsDeleted" class="labeltrue">&nbsp;&nbsp;ACTIVE&nbsp; </span>
+                                         <span ng-show="x.IsActive && x.IsDeleted" class="labeltrue">&nbsp;&nbsp;ACTIVE&nbsp; </span>
+                                        <span ng-show="x.IsDeleted" class="labelfalse">&nbsp;DELETED </span>
+                                    </td>
+                                    <td>
+                                         <button style="border-radius:0px;color:white;margin-bottom:1px;" class="btn btn-xs btn-primary">EDIT</button> <br />
+                                         <button style="border-radius:0px;color:white;margin-bottom:1px;" class="btn btn-xs btn-danger">DELETE</button>  <br />
+                                        <button style="border-radius:0px;color:white;margin-bottom:1px;" data-toggle="modal" data-target="#myModal" class="btn btn-xs btn-warning">CONTACT</button> 
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,194 @@
+
+<div class="container background-base" ng-controller="addMaidCtrl">
+    <h2>Add Maid</h2><hr/>
+    <script type="text/javascript">
+        $(function () {
+            $('.multiselect-ui').multiselect({
+                includeSelectAllOption: true
+            });
+        });
+       
+    </script>
+    <script>
+        var input = $('.timepicker');
+        input.clockpicker({
+            autoclose: true
+        });
+    </script>
+  
+    
+    <div class="">
+        <div class="row"><label>WorkTypePreference</label>
+<label>{{input.WorkTypePreference}}</label>
+<select style="min-width:100% !important;width:100%;border-radius:0px !important;border-color:#585858" ng-model="input.WorkTypePreference" id="dates-field2" class="multiselect-ui form-control btn-block" multiple="multiple">
+    <option value="Cleaning">Cleaning</option>
+    <option value="Cooking">Cooking</option>
+    <option value="Baby Sitter">Baby Sitting</option>
+    <option value="Elder / old age Care">Elder / old age Care</option>
+</select>
+            <div class="col-lg-6 form-group">
+<label>name</label>
+<input ng-model="input.FullName" class="form-control" type="text">
+
+               
+
+<label>UserName</label>
+<input ng-model="input.UserName" class="form-control" type="text">
+<label>Gender</label>
+<div class="radio">
+    <label><input ng-model="input.Gender" type="radio" value="female" name="optradio">Female</label>
+</div>
+<div class="radio">
+    <label><input ng-model="input.Gender" type="radio" value="male" name="optradio">Male</label>
+</div>
+<label>Age</label>
+<input ng-model="input.Age" class="form-control" type="text">
+<label>Religion</label>
+<input ng-model="input.Religion" class="form-control" type="text">
+<label>AdharNo</label>
+<input ng-model="input.AdharNo" class="form-control" type="text">
+<label>PANNo</label>
+<input ng-model="input.PANNo" class="form-control" type="text">
+<label>VoterCardNo</label>
+<input ng-model="input.VoterCardNo" class="form-control" type="text">
+<label>Email</label>
+<input ng-model="input.Email" class="form-control" type="email">
+<label>PrimaryPhoneNo</label>
+<input ng-model="input.PrimaryPhoneNo" class="form-control" type="number" maxlength="10" ng-maxlength="10">
+<label>SecondaryPhoneNo</label>
+<input ng-model="input.SecondaryPhoneNo" class="form-control" type="number" max="10">
+<label>PermanmentAddress</label>
+<textarea ng-model="input.PermanmentAddress" class="form-control textarea" name="" id="" cols="30" rows="6"></textarea>
+<label>temporaryAddress</label>
+<textarea ng-model="input.temporaryAddress" class="form-control textarea" name="" id="" cols="30" rows="6"></textarea>
+                <label>ContactPersonName</label>
+                <input ng-model="input.ContactPersonName" class="form-control" type="text">
+                <label>ContactAddressProof</label>
+                <input ng-model="input.ContactAddressProof" class="form-control" type="text">
+            </div>
+            <div class="col-lg-6 form-group">
+              
+                <label>ContactAddress1</label>
+                <input ng-model="input.ContactAddress1" class="form-control" type="text">
+                <label>ContactAddress2</label>
+                <input ng-model="input.ContactAddress2" class="form-control" type="text">
+                <label>ContactAddress3</label>
+                <input ng-model="input.ContactAddress3" class="form-control" type="text">
+            <label>ContactLocation</label>
+            <input ng-model="input.ContactLocation" class="form-control" type="text">
+            <label>ContactCity</label>
+            <input ng-model="input.ContactCity" class="form-control" type="text">
+            <label>ContactState</label>
+           
+            <input ng-model="input.ContactState" class="form-control" type="text">
+            <label>ContactCountry</label>
+            <input ng-model="input.ContactCountry" class="form-control" type="text">
+            <label>ContactPincode</label>
+            <input ng-model="input.ContactPincode" class="form-control" type="text">
+           
+            <label>DaysUnavaialble</label>
+                <select style="min-width:100% !important;width:100%;border-radius:0px !important;border-color:#585858" ng-model="input.DaysUnavaialble" id="dates-field3" class="multiselect-ui form-control btn-block" multiple="multiple">
+                    <option value="sun">Sunday</option>
+                    <option value="mon">Monday</option>
+                    <option value="tue">Tuesday</option>
+                    <option value="wed">Wednesday</option>
+                    <option value="thur">Thursday</option>
+                    <option value="fri">Friday</option>
+                    <option value="sat">Saturday</option>
+                </select>
+            <label>StartTime</label>
+                
+            <input class="timepicker form-control" value="" data-default="10:48" ng-model="input.StartTime" type="text">
+            <label>MaximumHours</label>
+            <input ng-model="input.MaximumHours" class="form-control" type="number">
+            <label>LocationPreference</label>
+            <input ng-model="input.LocationPreference" class="form-control" type="text">
+            <label>Ondate</label>
+            <input ng-model="input.Ondate" class="form-control" type="text">
+                <label>SalaryExpected</label>
+                <input ng-model="input.SalaryExpected" class="form-control" type="text">
+                <div class="row"><br />
+                    <label>&nbsp;&nbsp;&nbsp;Term Period</label><br />
+                    <div class="col-lg-3">
+                        <label>IsOneTime</label>
+                        <br />
+                        <label class="switch">
+                            <input ng-model="input.IsOneTime" type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label><br /><br />
+                    </div>
+                    <div class="col-lg-3">
+                        <label>IsDaily</label>
+                        <br />
+                        <label class="switch">
+                            <input ng-model="input.IsDaily" type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label><br /><br />
+                    </div>
+                    <div class="col-lg-3">
+                        <label>IsWeekly</label>
+                        <br />
+                        <label class="switch">
+                            <input ng-model="input.IsWeekly" type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label><br /><br />
+                    </div>
+                    <div class="col-lg-3">
+                        <label>IsMonthly</label>
+                        <br />
+                        <label class="switch">
+                            <input ng-model="input.IsMonthly" type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label><br /><br />
+                    </div>
+                   
+                </div>
+              
+                <div class="row">
+                    <br />
+                    <label>&nbsp;&nbsp;&nbsp;Maid Status</label><br />
+                    <div class="col-lg-3">
+                        <label>IsImmediateJoin</label><br />
+                        <label class="switch">
+                            <input ng-model="input.IsImmediateJoin" type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label><br /><br />
+                    </div>
+                    <div class="col-lg-3">
+                        <label>IsDeleted</label>
+                        <br />
+                        <label class="switch">
+                            <input ng-model="input.IsDeleted" type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label><br /><br />
+                    </div>
+                    <div class="col-lg-3">
+                        <label>IsApproved</label>
+                        <br />
+                        <label class="switch">
+                            <input ng-model="input.IsApproved" type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label><br /><br />
+                    </div>
+                    <div class="col-lg-3">
+                        <label>IsActive</label>
+                        <br />
+                        <label class="switch">
+                            <input ng-model="input.IsActive" type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label><br /><br />
+                    </div>
+                    
+                    <div class="col-lg-6 margintop">
+                        <button ui-sref="maidList" style="color:white;background-color:#4d0000;" class="form-control btn btn-primary btn-block" ng-click=""  type="button">Cancel</button>
+                    </div>
+                    <div class="col-lg-6 margintop">
+                        <input style="color:white;background-color:#333" class="form-control btn btn-danger btn-block" ng-click="Insert(this.input)" type="submit">
+                    </div>
+                  </div>  
+            </div>
+        </div>
+       
+    </div>
+</div>
+

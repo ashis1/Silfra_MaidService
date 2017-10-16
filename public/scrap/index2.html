@@ -1,0 +1,62 @@
+﻿<html>
+    <head>
+        <title>
+            Admin Panel
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+        <script src="./javascripts/angularApp.js"></script>
+        <script src="./javascripts/commonscript.js"></script>
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./stylesheets/style.css">
+        
+        <style>
+          
+        </style>
+        </head>
+    <body ng-app="app">
+       
+        <input type="checkbox" id="menu-toggle" />
+        <label style="color:#CCCCCC;margin-top:-7px" for="menu-toggle" class="menu-icon"><i class="fa fa-bars"></i></label>
+        <div style="width:100%" class="content-container">
+            <nav style="border-radius:0px;border:none;" class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a  class="navbar-brand">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                        <a class="navbar-brand">Maid Service</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a ui-sref="maidList" ui-sref-active="active">Maid List</a></li>
+                        <li><a ui-sref="addMaid">Post Maid Details</a></li>
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <ui-view></ui-view>
+        </div>
+        <div class="slideout-sidebar">
+            <ul>
+                <li></li>
+                <li ui-sref="/#/maidList" ui-sref-active="active"><i class="fa fa-home" ></i> Maid Records</li>
+                <li ui-sref="addMaid"><i class="fa fa-user"></i> Add Maid</li>
+                <li></li>
+            
+            </ul>
+        </div>
+     
+     
+    
+   </body>
+</html>

@@ -1,0 +1,326 @@
+﻿<div ng-controller="form1Ctrl">
+    <div class="modal fade" id="form2" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                
+                <div class="modal-body">
+                    <center>
+                        <h3><a class="navbar-brand" href="#page-top">&nbsp;&nbsp;&nbsp;Maid Service</a></h3>
+                        
+                   <br />
+                        <a style="width:100%;padding:10px;border:1px solid #fdcc52;border-radius:25px;text-decoration:none" onclick="this.style.display = 'none';" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                        
+                        please Continue</a>
+                    
+                    </center>
+
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+
+                            <div id="collapse0" class="panel-collapse collapse">
+                                <div class="panel-body">
+
+                                    <div class="col-lg-12" style="border-radius:1px; border:8px solid white;background-color:white; padding:20px;">
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <center style="padding:10px;" class="slider">
+                                                        <img style="max-width:100px;height:auto" src="lib/img/FINAL-ICON-167x167.png" /><br />
+                                                        Cleaning
+                                                    </center>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <center style="padding:10px;" class="slider">
+                                                        <img style="max-width:100px;height:auto" src="lib/img/food.png" /><br />
+                                                        Cooking
+                                                    </center>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <br />
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <center style="padding:10px;" class="slider">
+                                                        <img style="max-width:100px;height:auto;" src="lib/img/SC_Icon.png" /><br />
+                                                        Baby Sitter
+                                                    </center>
+                                                </label>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <center style="padding:10px;" class="slider">
+                                                        <img style="max-width:100px;height:auto" src="lib/img/mom-baby-yoga.png" /><br />
+                                                        Elder / old age Care
+                                                    </center>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <Center>
+                                            <br />
+                                            <a style="width:100%;padding:10px;border:1px solid #fdcc52;border-radius:25px;text-decoration:none" data-toggle="collapse" data-parent="#accordion" href="#collapse1">Start Now for Free!</a>
+
+                                        </Center>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default ">
+
+                            <div id="collapse1" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <center>
+                                        
+                                        <p style="font-size:small">Have an requiement for a maid(s). we are here to help you</p>
+                                        <p style="font-size:small">How urgent is your requirement?</p>
+                                    </center>
+                                    <a  onclick = "selectRequiementType('Urgent')" data-toggle="collapse" data-parent="#accordion" href="#collapse1in2" style="cursor:pointer;width:100%" class="btn btn-outline1 btn-xl ">
+                                        <div>
+                                            <h4>Urgent Requirement</h4>
+                                            <label>We will contact you as soon as possible</label>
+                                        </div>
+                                    </a>
+                                    <br /><br />
+                                    <a  onclick = "selectRequiementType('Not Urgent')" data-toggle="collapse" data-parent="#accordion" href="#collapse1in2" style="cursor:pointer;width:100%" class="btn btn-outline1 btn-xl ">
+                                        <div>
+                                            <h4>Not so urgent requirement</h4>
+                                            <label>We will contact you within 7 working days</label>
+                                        </div>
+                                    </a>
+
+                                    <br /><br />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+
+                            <div id="collapse1in2" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <center>
+                                        
+                                        <p style="font-size:small">Have an requiement for a maid(s). we are here to help you</p>
+                                        <p style="font-size:small">How much Session is your requirement?</p>
+                                    </center>
+                                   <div class="row">
+                                       <div class="col-md-6">
+                                           <a onclick="selectSessionType('One Time')" data-toggle="collapse" data-parent="#accordion" href="#collapse2" style="cursor:pointer;width:100%" class="btn btn-outline1 btn-xl ">
+                                               <div>
+                                                   <h4>One Time <br /> </h4>
+                                                   <label>requirement</label>
+                                               </div>
+                                           </a>
+                                           <br /><br />
+                                           <a onclick="selectSessionType('Weekly')" data-toggle="collapse" data-parent="#accordion" href="#collapse2" style="cursor:pointer;width:100%" class="btn btn-outline1 btn-xl ">
+                                               <div>
+                                                   <h4>Weekly <br /> </h4>
+                                                   <label>requirement</label>
+                                               </div>
+                                           </a>
+
+                                           <br /><br />
+                                       </div>
+                                       <div class="col-md-6">
+                                           <a onclick="selectSessionType('Daily')" data-toggle="collapse" data-parent="#accordion" href="#collapse2" style="cursor:pointer;width:100%" class="btn btn-outline1 btn-xl ">
+                                               <div>
+                                                   <h4>Daily<br /> </h4>
+                                                   <label>requirement</label>
+                                                   
+                                               </div>
+                                           </a>
+                                           <br /><br />
+                                           <a onclick="selectSessionType('Monthly')" data-toggle="collapse" data-parent="#accordion" href="#collapse2" style="cursor:pointer;width:100%" class="btn btn-outline1 btn-xl ">
+                                               <div>
+                                                   <h4>Monthly<br /> </h4>
+                                                   <label>requirement</label>
+                                                   
+                                               </div>
+                                           </a>
+
+                                           <br /><br />
+                                       </div>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+
+                            <div id="collapse2" class="panel-collapse collapse">
+                                <div class="panel-body">
+
+                                    <center>
+                                       
+                                        <p style="font-size:small">Which gender do you prefer?</p>
+
+                                    </center>
+                                    <center class="row">
+
+                                        <a onclick="selectGenderType('Male')" class="col-lg-4" data-toggle="collapse" data-parent="#accordion" href="#collapse3" style="cursor:pointer;width:100%" class="btn btn-outline1 btn-xl ">
+
+                                            <img class="img" src="lib/img/malemaid_icon.png" />
+
+
+                                            <label> male</label>
+
+                                        </a>
+                                        <a onclick="selectGenderType('Female')" class="col-lg-4" data-toggle="collapse" data-parent="#accordion" href="#collapse3" style="cursor:pointer;width:100%" class="btn btn-outline1 btn-xl ">
+
+                                            <img class="img" src="lib/img/femalemaid_icon.png" />
+
+
+                                            <label> Female</label>
+
+                                        </a>
+                                        <a onclick="selectGenderType('Any Gender')" class="col-lg-4" data-toggle="collapse" data-parent="#accordion" href="#collapse3" style="cursor:pointer;width:100%" class="btn btn-outline1 btn-xl ">
+
+                                            <img class="img" src="lib/img/anygendermaid_icon.png" />
+
+
+                                            <label> Any Gender</label>
+
+                                        </a>
+
+
+
+
+
+                                    </center>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+
+                            <div id="collapse3" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="container">
+                                        <center>
+                                          
+                                            <p style="font-size:small">Tell us more about yourself</p>
+
+                                        </center>
+                                        <div class="row form-group">
+                                            <div class="col-lg-6">
+                                                <input ng-model="input.Name" type="text" class="form-control" placeholder="Your Name" /><br />
+                                                <input ng-model="input.UserName" type="text" class="form-control" placeholder="Your Email" /><br />
+                                                <input ng-model="input.Password" type="password" autocomplete="off"  class="form-control" placeholder="Enter new password" />
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <input ng-model="input.PhoneNo" type="text" class="form-control" placeholder="Mobile Number" /><br />
+                                                <input ng-model="input.City" type="text" class="form-control" placeholder="Your City" /><br />
+                                                <input ng-model="input.RePassword" type="password" autocomplete="off" class="form-control" placeholder="Re-Type password" />
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-lg-12">
+                                                <br />
+                                                <center>
+                                                    <a  style="width:100%;padding:10px;border:1px solid #fdcc52;border-radius:25px;text-decoration:none" data-toggle="collapse" data-parent="#accordion" href="#collapse4">Continue</a>
+                                                    <br /><br /><a class="col-lg-4" data-toggle="collapse" data-parent="#accordion" href="#collapse5" style="text-decoration:none;font-size:x-small;color:#009aff" >I already have an account on MaidService</a><br />
+
+                                                    <span style="font-size:xx-small;color:#808080">By clicking on Join now, I accept the terms of use and privacy policy of MaidService</span>
+                                                </center>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+
+                            <div id="collapse4" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="container">
+                                        <center>
+
+                                            <p style="font-size:small">More details</p>
+
+                                        </center>
+                                        <div class="row form-group">
+                                            <div class="col-lg-12">
+                                                <input ng-model="input.Locality" type="text" class="form-control" placeholder="Enter your Locality" /><br />
+                                                <input ng-model="input.Landmark" type="text" class="form-control" placeholder="Enter your Landmark" /><br />
+                                                <textarea ng-model="input.FullAddress" type="text" rows="7" class="form-control" placeholder="Enter your Full address for the demo" ></textarea><br />
+                                            </div>
+                                             
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-lg-12">
+                                                <br />
+                                                <center>
+                                                    <a ng-click="Insert(this.input)" style="width:100%;padding:10px;border:1px solid #fdcc52;border-radius:25px;text-decoration:none" data-toggle="collapse" data-parent="#accordion" href="@auth">Register & Continue</a>
+                                                    <br /><br /><a class="col-lg-4" data-toggle="collapse" data-parent="#accordion" href="#collapse5" style="text-decoration:none;font-size:x-small;color:#009aff">I already have an account on MaidService</a><br />
+
+                                                    <span style="font-size:xx-small;color:#808080">By clicking on Join now, I accept the terms of use and privacy policy of MaidService</span>
+                                                </center>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+
+                            <div id="collapse5" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <form class="container" action="/api/login" method="post">
+                                        <center>
+                                            <p style="">Sign in</p>
+                                        </center>
+                                        <center class="row form-group">
+                                            <div class="col-lg-1">  </div>
+                                            <div class="col-lg-10">
+
+                                                <input ng-model="user.UserName" name="UserName" type="text" class="form-control" placeholder="Your Email" /><br />
+                                                <input ng-model="user.Password" name="Password" type="text" class="form-control" placeholder="Your password" />
+                                            </div>
+                                            <div class="col-lg-1">  </div>
+                                        </center>
+                                        <div class="row form-group">
+                                            <div class="col-lg-12">
+                                                <br />
+                                                <center>
+                                                    <input type="submit" class=""   value="login..!!" />
+                                                    <a  class="" ng-click="login(user)"  style="width:100%;padding:10px;border:1px solid #fdcc52;border-radius:25px;text-decoration:none" data-toggle="collapse" data-parent="#accordion" href="#collapse1">Sign in</a>
+                                                    <br /><br /> <span style="font-size:x-small;color:#808080">Forget Password ? <a style="text-decoration:none;font-size:x-small;color:#009aff" href="#"> Click Here</a></span><br />
+
+                                                    <span style="font-size:x-small;color:#808080">Don't have an account yet? <a style="text-decoration:none;font-size:x-small;color:#009aff" data-toggle="collapse" data-parent="#accordion" href="#collapse0">Register Now</a></span>
+                                                </center>
+
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+</div>

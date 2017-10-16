@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="angularsimple.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    <input ng-model="input.name" class="form-control" type="text">
+    <input ng-model="input.code" class="form-control" type="text">
+    <input style="color:white;background-color:#333" class="form-control btn btn-danger btn-block" ng-click="Insert(this.input)" type="submit">
+    <hr />
+    {{error1}}
+    <hr />
+    {{error2}}
+    <hr />
+    {{getall}}
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿
+<div ng-controller="userListCtrl">
+    
+    <!--{{getUserList}}-->
+    <div class="container background-base">
+
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Client List</h2>
+            </div>
+            <div class="col-md-1">
+
+            </div>
+            <div class="col-md-3 pull-right">
+                <h4 class="pull-right"> INFORMATION</h4><br /><br />
+                <span style="padding:3px;font-size:small;" class="labeltrue pull-right">&nbsp;TRUE </span>&nbsp;&nbsp;
+                <span style="padding:3px;font-size:small" class="labelfalse pull-right">&nbsp;FALSE </span>
+
+            </div>
+        </div>
+        <hr />
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Client Records</div>
+                    <div class="panel-body">
+                        <table class="table table-hover table-bordered table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>UserName</th>
+                                    <th>Contact</th>
+                                    <th>City</th>
+                                
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="x in getUserList">
+                                    <td>{{x.Name}}</td>
+                                    <td>{{x.UserName}}</td>
+                                    <td>{{x.PhoneNo}}</td>
+                                    <td>{{x.City}}</td>
+                                 
+                            
+                                  
+                                    <td>
+                                        <button style="border-radius:0px;color:white" class="btn btn-xs btn-primary">EDIT</button>
+                                        <button style="border-radius:0px;color:white" class="btn btn-xs btn-danger">DELETE</button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

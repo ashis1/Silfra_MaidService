@@ -1,0 +1,75 @@
+
+<div  ng-controller="maidListCtrl">
+    <div class="container background-base">
+        
+        <div class="row">
+            <div class="col-md-8">
+                <h2>home</h2>
+            </div>
+            <div class="col-md-1">
+                
+            </div>
+            <div class="col-md-3 pull-right">
+               <h4 class="pull-right"> INFORMATION</h4><br /><br />
+                <span style="padding:3px;font-size:small;" class="labeltrue pull-right">&nbsp;TRUE </span>&nbsp;&nbsp;
+                <span style="padding:3px;font-size:small" class="labelfalse pull-right">&nbsp;FALSE </span>
+            
+            </div>
+        </div>
+        <hr />
+       
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Maid Records</div>
+                    <div class="panel-body">
+                        <table class="table table-hover table-bordered table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Basic</th>
+                                    <th>Days Unavailable</th>
+                                    <th>Period Type</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="x in getall">
+                                    <td>{{x.FullName}}</td>
+                                    <td><span ng-repeat="y in x.WorkTypePreference">{{y}}, </span></td>
+                                    <!--<td>{{x.Religion}} {{x.Gender}} <span ng-if="x.Gender.length > 0">|</span> {{x.Religion}} <span ng-if="x.Religion.length > 0">|</span>  Rs. {{x.SalaryExpected}}</td>-->
+                                    <td>{{x.Religion}} {{x.Gender}} |  Rs. {{x.SalaryExpected}}</td>
+                                    <td><span ng-repeat="y in x.DaysUnavaialble">{{y}},  </span></td>
+                                    <td>
+                                        <span ng-if="x.IsOneTime" class="labeltrue">&nbsp;ONETIME </span>
+                                        <span ng-if="!x.IsOneTime" class="labelfalse">&nbsp;ONETIME </span>
+                                        <span ng-if="x.IsDaily" class="labeltrue">&nbsp;DAILY&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                                        <span ng-if="!x.IsDaily" class="labelfalse">&nbsp;DAILY &nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+                                        <span ng-if="x.IsWeekly" class="labeltrue">&nbsp;WEEKLY </span>
+                                        <span ng-if="!x.IsWeekly" class="labelfalse">&nbsp;WEEKLY </span>
+                                        <span ng-if="x.IsMonthly" class="labeltrue">&nbsp;MONTHLY </span>
+                                        <span ng-if="!x.IsMonthly" class="labelfalse">&nbsp;MONTHLY </span>
+
+                                    <td>
+                                       
+                                        <span  ng-show="x.IsActive && !x.IsDeleted"  class="labeltrue">&nbsp;&nbsp;ACTIVE&nbsp; </span>
+                                        <span ng-show="x.IsDeleted" class="labelfalse">&nbsp;DELETED </span>
+                                    </td>
+                                    <td>
+                                        <button style="border-radius:0px;color:white" class="btn btn-xs btn-primary">EDIT</button>
+                                        <button style="border-radius:0px;color:white" class="btn btn-xs btn-danger">DELETE</button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
